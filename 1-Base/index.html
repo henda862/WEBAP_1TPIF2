@@ -7,7 +7,7 @@
     <title>Pokemon Basics</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.cdnfonts.com/css/g-guarantee" rel="stylesheet">
-   <script src="jquery-3.7.1.min.js"></script>
+   <script src="../jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -32,13 +32,19 @@
          <script>
             $(document).ready(function () {
                 $("button#btnRegister").click(function () {
-                        let nickname = $("#userInput").val();
-                                        $("#showplayer").text(nickname);
-                                        $("#userInput").val("");
+                    //user input speichern nachdem Button Klick
+                    let nickname = $("#userInput").val();
+                    // User input in das <span>-Element schreiben
+                    $("#showplayer").text(nickname);
+                    //User Input leeren
+                    $("#userInput").val("");
+                    // Exercise 1 Instructions: 
+                    // When the "Register" button is clicked, 
+                    // use jQuery to transfer the text of input field to the <span> element with the id "showplayer". 
+                    // Empty the input field.
                 });
             });
         </script>
     </main>
 </body>
-
 </html>

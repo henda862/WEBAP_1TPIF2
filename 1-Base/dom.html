@@ -7,7 +7,7 @@
     <title>Pokemon Basics</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.cdnfonts.com/css/g-guarantee" rel="stylesheet">
-    <!-- import jquery Library -->
+    <script src="../jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
     <main>
         <h2>Exercise 3: DOM Manipulation</h2>
         <button type="button" id="btnAddLevel">Add Level</button>
-        <!-- add button to remove a level -->
-        <ul>
+        <button type="button" id="btnRemoveLevel">Remove Level</button>
+        <ul id="levelList">
             <li>Level 1</li>
             <li>Level 2</li>
             <li>Level 3</li>
@@ -41,6 +41,25 @@
                 // Add a button to remove the last list item.
                 // If the list is empty show an alert "No level"
                 // The Level can not exceed 10. Show an alert if no more can be added.
+                $(document).ready(function(){
+                    let levelCount= 3;
+                    $("#btnAddLevel").click(function(){
+                    if (levelCount >= 10){
+                        alert("No more levels can be added!")
+                    }else{
+                        levelCount++
+                        $("#levelList").append("<li>Level "+ levelCount + "</li>")
+                    }
+                    })
+                    $("#btnRemoveLevel").click(function (){
+                    if (levelCount <= 0){
+                        alert("No level")
+                    }else{
+                        $("#levelList li:last").remove()
+                        levelCount--
+                    }
+                    })
+                })
         </script>
 
     </main>

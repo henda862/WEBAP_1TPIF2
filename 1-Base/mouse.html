@@ -7,7 +7,7 @@
     <title>Pokemon Basics</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.cdnfonts.com/css/g-guarantee" rel="stylesheet">
-    <!-- import jquery Library -->
+    <script src="../jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -34,18 +34,29 @@
         <p id="hovered">A. So far nothing...</p>
         <p>B. You are looking at <span id="current">nothing</span>.</p>
         <script>
-            $(document).ready(function () {
-                // Exercise 2 Instructions:
+            // Exercise 2 Instructions:
                 // Part A. //
                 // Use jQuery to detect when the mouse enters a startpoke button,
                 // display a message in the "hovered" paragraph saying "Mouse entered."
                 // When the mouse leaves the button, display "Mouse left."
                 // Preserve the "A. in the hovered div"
+            $(document).ready(function () {
+                $(".startpoke").mouseenter(function () {
+                    $("#hovered").text("A. Mouse entered")
+
+                    let imgAlt= $(this).find("img").attr("alt")
+                    $("#current").text(imgAlt)
+                })
+                $(".startpoke").mouseleave(function () {
+                 $("#hovered").text("A. Mouse left")
+                    $("#current").text("nothing")
+                })
                 // Part B. //
                 // Additionally get the pokemon name stored in the alt attribute 
                 // of the img and show this name in the prepared span with id current.
                 // If nothing is currently happening it should say "nothing".
                 // TODO code here: //
+                
 
             });
         </script>

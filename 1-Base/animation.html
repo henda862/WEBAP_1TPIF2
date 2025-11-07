@@ -6,12 +6,19 @@
     <title>Pokemon Basics</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.cdnfonts.com/css/g-guarantee" rel="stylesheet">
-    <!-- import jquery Library -->
+    <script src="../jquery-3.7.1.min.js"></script>
     <style>
         main{
             position: relative;
             height:500px;
         }
+#runaway {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: url("img/animations/psyduck.gif") no-repeat center/contain;
+        cursor: pointer;  
+    }
     </style>
 </head>
 <body>
@@ -34,6 +41,8 @@
         </div>
         <script>
             $(document).ready(function() {
+                let parentWidth = $("main").width() - 100;
+                let parentHeight = $("main").height() - 100;
                 // Exercise 4 Instructions:
                 // When the user tries to catch Psyduck with the cursor it will try to run away!
                 // use jQuery to animate the "runaway" div to move it randomly.
@@ -42,7 +51,13 @@
                 //    Remove from each 100px to account for the size of the runaway div.
                 // c. Calculate new random left and top values between 0 and height/width of main
                 // d. Animate the touched runaway div by changing its css propertied left and top
-            
+            $("#runaway").mouseenter(function (){
+
+            let newLeft = Math.random()* parentWidth
+            let newTop = Math.random()* parentHeight
+
+            $("#runaway").animate({ left: newLeft, top: newTop})
+            })
             });
         </script>
     </main>
