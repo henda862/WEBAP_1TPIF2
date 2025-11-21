@@ -40,10 +40,7 @@
         <div id="runaway">
         </div>
         <script>
-            $(document).ready(function() {
-                let parentWidth = $("main").width() - 100;
-                let parentHeight = $("main").height() - 100;
-                // Exercise 4 Instructions:
+             // Exercise 4 Instructions:
                 // When the user tries to catch Psyduck with the cursor it will try to run away!
                 // use jQuery to animate the "runaway" div to move it randomly.
                 // a. Get the event trigger on the runaway div
@@ -51,6 +48,10 @@
                 //    Remove from each 100px to account for the size of the runaway div.
                 // c. Calculate new random left and top values between 0 and height/width of main
                 // d. Animate the touched runaway div by changing its css propertied left and top
+            $(document).ready(function() {
+                let parentWidth = $("main").width() - 100;
+                let parentHeight = $("main").height() - 100;
+               
             $("#runaway").mouseenter(function (){
 
             let newLeft = Math.random()* parentWidth
