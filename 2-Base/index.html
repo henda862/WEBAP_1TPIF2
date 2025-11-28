@@ -28,10 +28,17 @@
         <h3>Why did the tomato turn red?</h3>
         <button type="button" id="btnHelp">I need a tip</button>
         <p id="txtHelp"></p>
-        <script>
-            $("#btnHelp").click(function(){
-                $.get("../assets/joke/jokeHelp.txt")
+        <script>  
+          $("#btnHelp").click(function(){
+                $("#txtHelp").load("./assets/joke/jokeHelp.txt")
+                $("#btnHelp").text("Show answer")
+                $("#btnHelp").click(function(){
+                    $("#txtHelp").load("./assets/joke/answer.txt")
+                    $("#btnHelp").remove()
+                })
+
             })
+            
                 // Exercise 1 Instructions:
                 // The user should guess the riddle. 
                 // If the user first clicks the Button a helping tip is loaded from the file help.txt into txtHelp.
